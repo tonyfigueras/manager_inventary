@@ -32,7 +32,11 @@
 * modificar el archivo .env.example a .env
 * Actualice .env y configure las credenciales de su base de datos
 * php artisan key:generate
-* php artisan migrate
+* php artisan migrate:refresh --seed
 * npm install
 * npm run dev
 * php artisan serve
+
+### Credenciales por default
+email: admin@example.com
+password: password
