@@ -10,7 +10,7 @@
 ## Especificación técnica
 
 * Laravel 12
-* Vue 2
+* Vue 
 * Axios
 * Sweetalert2
 * vue-router
