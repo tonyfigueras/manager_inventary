@@ -38,5 +38,5 @@
 * php artisan serve
 
 ### Credenciales por default
-email: admin@example.com
-password: password
+* email: admin@example.com
+* password: password
