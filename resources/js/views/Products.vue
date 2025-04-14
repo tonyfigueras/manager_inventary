@@ -252,7 +252,7 @@ export default {
           params.stock = this.stockFilter;
         }
         
-        const response = await axios.get("http://localhost:8000/api/products", {
+        const response = await axios.get("/api/products", {
           params: params,
           headers: {
             Authorization: `Bearer ${token}`
@@ -292,7 +292,7 @@ export default {
     async fetchCategories() {
       try {
         const token = localStorage.getItem("token");
-        const response = await axios.get('http://localhost:8000/api/categories', {
+        const response = await axios.get('/api/categories', {
           headers: { Authorization: `Bearer ${token}` }
         });
         this.categories = response.data.data;
@@ -339,13 +339,13 @@ export default {
         
         if (this.editingId) {
            request = axios.put(
-            `http://localhost:8000/api/products/${this.editingId}`, 
+            `/api/products/${this.editingId}`, 
             this.productForm,
             { headers: { Authorization: `Bearer ${token}` } }
           );
         } else {
            request = axios.post(
-            'http://localhost:8000/api/products', 
+            '/api/products', 
             this.productForm,
             { headers: { Authorization: `Bearer ${token}` } }
           );
@@ -394,7 +394,7 @@ export default {
     async deleteProduct(id) {
       try {
         const token = localStorage.getItem("token");
-        await axios.delete(`http://localhost:8000/api/products/${id}`, {
+        await axios.delete(`/api/products/${id}`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         

@@ -222,13 +222,13 @@ export default {
         
         if (this.editingId) {
           response = await axios.put(
-            `http://localhost:8000/api/categories/${this.editingId}`,
+            `/api/categories/${this.editingId}`,
             { name: this.CategoryName },
             { headers: { Authorization: `Bearer ${token}` } }
           );
         } else {
           response = await axios.post(
-            "http://localhost:8000/api/categories",
+            "/api/categories",
             { name: this.CategoryName },
             { headers: { Authorization: `Bearer ${token}` } }
           );
@@ -279,7 +279,7 @@ export default {
     async fetchCategories(page = 1) {
       try {
         const token = localStorage.getItem("token");
-        let url = `http://localhost:8000/api/categories?page=${page}`;
+        let url = `/api/categories?page=${page}`;
         
   
         if (this.searchTerm) {
@@ -342,7 +342,7 @@ export default {
       async deleteCategory(categoryId) {
         try {
           const token = localStorage.getItem("token");
-          await axios.delete(`http://localhost:8000/api/categories/${categoryId}`, {
+          await axios.delete(`/api/categories/${categoryId}`, {
             headers: {
               Authorization: `Bearer ${token}`
             }
